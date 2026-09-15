@@ -281,13 +281,6 @@ function displayAnnouncementResult(staff, queryData) {
           </div>
         </div>
 
-        <div class="division-description-box">
-          <div style="font-weight: 700; margin-bottom: 4px; color: #1a0f0a;">
-            <i class="fa-solid fa-compass" style="color: #b45309;"></i> Amanah & Peran Divisi:
-          </div>
-          ${divInfo.description}
-        </div>
-
         <div class="pass-actions">
           <div class="action-row">
             <a href="${waCoordinatorUrl}" target="_blank" class="btn-pass btn-whatsapp" onclick="playSfx('click')">
@@ -559,11 +552,10 @@ function renderStaffList() {
         <div class="staff-info">
           <div class="staff-name" title="${staff.name}">${staff.name}</div>
           <div class="staff-meta">
-            <span class="nim-badge">${staff.nim}</span>
-            <span class="staff-prodi" title="${staff.prodi}">${staff.prodi}</span>
+            <span class="staff-prodi" title="${staff.prodi}"><i class="fa-solid fa-graduation-cap"></i> ${staff.prodi}</span>
           </div>
-          <div style="font-size: 0.72rem; color: ${div.color}; margin-top: 4px; font-weight: 600;">
-            <i class="fa-solid fa-tag"></i> ${staff.division}
+          <div style="font-size: 0.75rem; color: ${div.color}; margin-top: 4px; font-weight: 600;">
+            <i class="fa-solid fa-tag"></i> ${div.name}
           </div>
         </div>
         <i class="fa-solid fa-chevron-right" style="color: var(--gold-500); font-size: 0.8rem; opacity: 0.6;"></i>

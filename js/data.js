@@ -90,7 +90,7 @@ const DIVISIONS = {
   },
   "HUMAS": {
     id: "humas",
-    name: "Hubungan Masyarakat (Humas)",
+    name: "Humas",
     badge: "📢 Fleet Emissaries",
     icon: "fa-bullhorn",
     color: "#3b82f6",
@@ -98,12 +98,12 @@ const DIVISIONS = {
     coordinator: {
       name: "Adzka Dzikra / Alifia R.",
       phone: "6281234567805",
-      role: "Koordinator Hubungan Masyarakat"
+      role: "Koordinator Divisi Humas"
     }
   },
   "MEDIS": {
     id: "medis",
-    name: "Medis & Pertolongan Pertama",
+    name: "Medis",
     badge: "🩺 Fleet Surgeons",
     icon: "fa-briefcase-medical",
     color: "#10b981",
@@ -142,7 +142,7 @@ const DIVISIONS = {
   },
   "PDDD": {
     id: "pddd",
-    name: "PDDD (Publikasi, Desain, Dok, Dek)",
+    name: "PDDD",
     badge: "🎨 Visual Chroniclers",
     icon: "fa-camera-retro",
     color: "#f97316",
