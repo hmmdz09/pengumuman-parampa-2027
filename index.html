@@ -129,20 +129,39 @@
       </div>
 
       <div class="hero-visual">
-        <!-- Bendera Resmi Armada Berkibar Real-time -->
-        <div class="flagship-showcase-box">
-          <div class="flagship-header">
-            <div class="flagship-badge">
-              <span class="pulse-dot"></span> BENDERA RESMI ARMADA PARAMPA
+        <!-- Live Ship Scene: POV Kru Melihat Kapten & Bendera Berkibar Real-time di Tiang Kapal -->
+        <div class="ship-live-scene" id="shipLiveScene">
+          <div class="ship-scene-header">
+            <div class="ship-scene-badge">
+              <span class="pulse-dot"></span> BENDERA RESMI DI TIANG KAPAL
             </div>
-            <span class="flag-hint"><i class="fa-solid fa-wind"></i> Berkibar Realtime • Sentuh untuk Hembus Angin</span>
+            <span class="ship-scene-hint">
+              <i class="fa-solid fa-wind"></i> Berkibar Real-time di Tiang
+            </span>
           </div>
-          <div class="flag-canvas-container" title="Klik atau arahkan kursor untuk menghembus angin laut!">
-            <canvas id="parampaFlagCanvas"></canvas>
+
+          <!-- Viewport Kapal: POV Kru Melihat Kapten dari Belakang + Canvas Bendera di Tiang -->
+          <div class="ship-viewport" id="shipViewport" title="Arahkan kursor atau klik untuk menghembus angin laut ke bendera!">
+            <img src="assets/pirate-background.jpg" alt="POV Kru Melihat Kapten dari Belakang di Geladak Kapal" class="ship-scene-img">
+            
+            <!-- Bendera Real-time Berkibar di Tiang Kapal -->
+            <div class="mast-flag-wrapper">
+              <canvas id="shipMastFlagCanvas"></canvas>
+            </div>
+
+            <!-- Label Kapten di Kemudi -->
+            <div class="captain-helm-tag">
+              <i class="fa-solid fa-dharmachakra"></i> Kapten di Kemudi
+            </div>
+          </div>
+
+          <div class="ship-scene-footer">
+            <span><i class="fa-solid fa-compass"></i> POV Kru di Geladak Kapal</span>
+            <span class="interactive-tag"><i class="fa-solid fa-hand-pointer"></i> Klik/Hover untuk Tiup Angin</span>
           </div>
         </div>
 
-        <!-- Poster Resmi PARAMPA -->
+        <!-- Poster Resmi PARAMPA We're Back -->
         <div class="hero-poster-wrapper">
           <img src="assets/parampa-poster.jpg" alt="Poster Resmi PARAMPA 2026-2027 We're Back" class="hero-poster-img" id="heroPoster">
           <div class="poster-floating-tag">
