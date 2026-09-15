@@ -341,7 +341,7 @@ class WavingFlag {
     ctx.fill();
 
     ctx.strokeStyle = '#fef08a';
-    ctx.lineWidth = 1.2;
+    ctx.lineWidth = 1.4;
     ctx.beginPath();
     ctx.moveTo(fx - 6, fy + 5);
     ctx.lineTo(fx + 1, fy + 5);
@@ -356,6 +356,17 @@ class WavingFlag {
     ctx.beginPath();
     ctx.moveTo(fx - 6, fy + this.flagHeight - 5);
     ctx.lineTo(fx + 1, fy + this.flagHeight - 5);
+    ctx.stroke();
+
+    // Ring pengikat kuningan ke tiang kapal
+    ctx.strokeStyle = '#b45309';
+    ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    ctx.arc(0, fy + 5, 3, -Math.PI / 2, Math.PI / 2);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(0, fy + this.flagHeight - 5, 3, -Math.PI / 2, Math.PI / 2);
     ctx.stroke();
   }
 }

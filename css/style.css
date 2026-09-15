@@ -467,18 +467,18 @@ body {
 
 /* Bendera di Kapal 1 (Kapal Hitam Bajak Laut di Kiri) */
 .ship-flag-mount.ship-1-flag {
-  top: 10.5%;
-  left: 76.2%;
+  top: 12.8%;
+  left: 77.5%;
   width: 7.2%;
-  height: 7.6%;
+  height: 7.2%;
 }
 
 /* Bendera di Kapal 2 (Galleon Utama di Kanan) */
 .ship-flag-mount.ship-2-flag {
-  top: 11.6%;
-  left: 88.5%;
-  width: 8.4%;
-  height: 8.8%;
+  top: 13.3%;
+  left: 88.0%;
+  width: 7.5%;
+  height: 7.4%;
 }
 
 .ship-flag-mount canvas {

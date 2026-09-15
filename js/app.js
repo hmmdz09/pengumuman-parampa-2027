@@ -331,8 +331,8 @@ function displayAnnouncementResult(staff, queryData) {
               <button class="btn-pass btn-download-pass" onclick="closeResultModal(); document.getElementById('searchName').focus();">
                 <i class="fa-solid fa-rotate-left"></i> Coba Cari Lagi
               </button>
-              <a href="https://wa.me/${PARAMPA_CONFIG.helpdesk.phone}?text=Halo%20Helpdesk%20PARAMPA,%20saya%20ingin%20mengonfirmasi%20data%20hasil%20seleksi%20atas%20nama%20${encodeURIComponent(queryData.nameVal || '')}%20(NIM:%20${encodeURIComponent(queryData.nimVal || '')})" target="_blank" class="btn-pass btn-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> Hubungi Helpdesk
+              <a href="https://wa.me/${PARAMPA_CONFIG.helpdesk.phone}?text=Halo%20Kak%20${encodeURIComponent(PARAMPA_CONFIG.helpdesk.name)}%20Helpdesk%20PARAMPA,%20saya%20ingin%20mengonfirmasi%20data%20hasil%20seleksi%20atas%20nama%20${encodeURIComponent(queryData.nameVal || '')}" target="_blank" class="btn-pass btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Hubungi Helpdesk (${PARAMPA_CONFIG.helpdesk.name})
               </a>
             </div>
           </div>
@@ -477,7 +477,7 @@ function updateDivisionInfoCard() {
       </div>
       <div class="div-contact-badge">
         <a href="https://wa.me/${PARAMPA_CONFIG.helpdesk.phone}" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> Hubungi Helpdesk Utama
+          <i class="fa-brands fa-whatsapp"></i> Hubungi Helpdesk Utama (${PARAMPA_CONFIG.helpdesk.name})
         </a>
       </div>
     `;
@@ -492,7 +492,7 @@ function updateDivisionInfoCard() {
       </div>
       <div class="div-contact-badge">
         <a href="https://wa.me/${div.coordinator.phone}?text=Halo%20Kak%20${encodeURIComponent(div.coordinator.name)},%20saya%20staf%20divisi%20${encodeURIComponent(div.name)}%20PARAMPA%202026-2027" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i> CP Divisi: ${div.coordinator.name}
+          <i class="fa-brands fa-whatsapp"></i> Contact Person Divisi: ${div.coordinator.name}
         </a>
       </div>
     `;

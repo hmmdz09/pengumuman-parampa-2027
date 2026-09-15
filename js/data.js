@@ -10,9 +10,9 @@ const PARAMPA_CONFIG = {
   year: "2026-2027",
   waGroupGeneral: "https://chat.whatsapp.com/invite/PARAMPA2027GeneralFleet",
   helpdesk: {
-    name: "Helpdesk Oprec PARAMPA",
-    phone: "6281234567890",
-    role: "Pusat Bantuan & Konfirmasi Panitia"
+    name: "Diki",
+    phone: "6283867125858",
+    role: "Helpdesk PARAMPA 2026-2027"
   },
   ketuaPelaksana: {
     name: "Kapten Pelaksana PARAMPA",
@@ -135,7 +135,7 @@ const DIVISIONS = {
     color: "#14b8a6",
     description: "Menghimpun pundi-pundi emas melalui kerja sama kemitraan sponsor eksternal, bazar wirausaha kreatif, merchandise, dan fundraising armada.",
     coordinator: {
-      name: "Koordinator Danus",
+      name: "Kahla",
       phone: "6285797904702",
       role: "Koordinator Sponsor & Dana Usaha"
     }
