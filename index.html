@@ -92,8 +92,19 @@
 
   <!-- Hero Section -->
   <header class="hero-section" id="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
+    <!-- Bendera Real-time Berkibar Langsung di Latar Belakang Tiang Kapal -->
+    <div class="bg-mast-flag-container" id="bgMastFlagContainer" title="Bendera Resmi PARAMPA 2026-2027 • Klik atau gerakkan kursor untuk hembus angin laut!">
+      <div class="flag-wind-badge">
+        <span class="pulse-dot"></span> BENDERA RESMI BERKIBAR REALTIME
+      </div>
+      <canvas id="shipMastFlagCanvas"></canvas>
+      <div class="flag-wind-hint">
+        <i class="fa-solid fa-wind"></i> Tiup Angin: Arahkan Kursor / Klik
+      </div>
+    </div>
+
+    <div class="container hero-layout">
+      <div class="hero-content-card">
         <div class="hero-badge">
           <i class="fa-solid fa-skull-crossbones"></i>
           <span>PENGUMUMAN RESMI OPREC PANITIA</span>
@@ -110,7 +121,7 @@
 
         <div class="hero-stats">
           <div class="stat-box">
-            <span class="stat-number">125+</span>
+            <span class="stat-number">148</span>
             <span class="stat-label">Kru Terpilih</span>
           </div>
           <div class="stat-box">
@@ -123,50 +134,13 @@
           </div>
         </div>
 
-        <a href="#cek-hasil" class="btn-search" style="text-decoration: none;">
-          <i class="fa-solid fa-compass"></i> Cek Pengumuman Sekarang
-        </a>
-      </div>
-
-      <div class="hero-visual">
-        <!-- Live Ship Scene: POV Kru Melihat Kapten & Bendera Berkibar Real-time di Tiang Kapal -->
-        <div class="ship-live-scene" id="shipLiveScene">
-          <div class="ship-scene-header">
-            <div class="ship-scene-badge">
-              <span class="pulse-dot"></span> BENDERA RESMI DI TIANG KAPAL
-            </div>
-            <span class="ship-scene-hint">
-              <i class="fa-solid fa-wind"></i> Berkibar Real-time di Tiang
-            </span>
-          </div>
-
-          <!-- Viewport Kapal: POV Kru Melihat Kapten dari Belakang + Canvas Bendera di Tiang -->
-          <div class="ship-viewport" id="shipViewport" title="Arahkan kursor atau klik untuk menghembus angin laut ke bendera!">
-            <img src="assets/pirate-background.jpg" alt="POV Kru Melihat Kapten dari Belakang di Geladak Kapal" class="ship-scene-img">
-            
-            <!-- Bendera Real-time Berkibar di Tiang Kapal -->
-            <div class="mast-flag-wrapper">
-              <canvas id="shipMastFlagCanvas"></canvas>
-            </div>
-
-            <!-- Label Kapten di Kemudi -->
-            <div class="captain-helm-tag">
-              <i class="fa-solid fa-dharmachakra"></i> Kapten di Kemudi
-            </div>
-          </div>
-
-          <div class="ship-scene-footer">
-            <span><i class="fa-solid fa-compass"></i> POV Kru di Geladak Kapal</span>
-            <span class="interactive-tag"><i class="fa-solid fa-hand-pointer"></i> Klik/Hover untuk Tiup Angin</span>
-          </div>
-        </div>
-
-        <!-- Poster Resmi PARAMPA We're Back -->
-        <div class="hero-poster-wrapper">
-          <img src="assets/parampa-poster.jpg" alt="Poster Resmi PARAMPA 2026-2027 We're Back" class="hero-poster-img" id="heroPoster">
-          <div class="poster-floating-tag">
-            <i class="fa-solid fa-anchor"></i> WE'RE BACK!
-          </div>
+        <div class="hero-cta-group">
+          <a href="#cek-hasil" class="btn-search" style="text-decoration: none;">
+            <i class="fa-solid fa-compass"></i> Cek Pengumuman Sekarang
+          </a>
+          <a href="#direktori" class="btn-outline-gold" style="text-decoration: none;">
+            <i class="fa-solid fa-users"></i> Lihat Seluruh Kru
+          </a>
         </div>
       </div>
     </div>

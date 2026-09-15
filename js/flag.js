@@ -167,22 +167,39 @@ class WavingFlag {
   }
 
   initEvents() {
-    // Interaksi hembusan angin dinamis pada kanvas atau kontainer viewport kapal
-    const interactiveTarget = this.canvas.closest('.ship-viewport') || this.canvas;
+    // Interaksi hembusan angin dinamis pada kontainer bendera latar belakang atau canvas
+    const interactiveTarget = this.canvas.closest('.bg-mast-flag-container') || this.canvas;
 
     interactiveTarget.addEventListener('mouseenter', () => {
-      this.targetGust = 1.8;
+      this.targetGust = 1.9;
     });
     interactiveTarget.addEventListener('mouseleave', () => {
       this.targetGust = 1.0;
     });
     interactiveTarget.addEventListener('click', () => {
-      this.targetGust = 2.6;
-      setTimeout(() => { this.targetGust = 1.0; }, 1200);
+      this.targetGust = 2.8;
+      setTimeout(() => { this.targetGust = 1.0; }, 1400);
       if (typeof playSfx === 'function') {
         playSfx('click');
       }
     });
+
+    // Interaksi hembus angin saat kursor digerakkan di sekitar hero section
+    const heroSec = document.getElementById('hero');
+    if (heroSec) {
+      let lastMove = 0;
+      heroSec.addEventListener('mousemove', () => {
+        const now = Date.now();
+        if (now - lastMove > 250) {
+          lastMove = now;
+          this.targetGust = Math.min(2.2, this.targetGust + 0.18);
+          clearTimeout(this._gustTimer);
+          this._gustTimer = setTimeout(() => {
+            this.targetGust = 1.0;
+          }, 1400);
+        }
+      });
+    }
 
     window.addEventListener('resize', () => {
       this.initCanvasSize();
@@ -263,31 +280,35 @@ class WavingFlag {
   }
 
   drawFlagpole(ctx, px, py) {
-    const poleH = this.canvasHeight - 10;
+    const poleH = this.canvasHeight;
 
     // Bayangan tiang kayu
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-    ctx.fillRect(px + 3, py + 8, 12, poleH);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+    ctx.fillRect(px + 4, py + 6, 12, poleH);
 
-    // Batang tiang kayu bertekstur
+    // Batang tiang kayu bertekstur maritim
     const poleGrad = ctx.createLinearGradient(px, 0, px + 12, 0);
     poleGrad.addColorStop(0, '#2b1408');
     poleGrad.addColorStop(0.35, '#854d0e');
-    poleGrad.addColorStop(0.7, '#a16207');
+    poleGrad.addColorStop(0.7, '#b45309');
     poleGrad.addColorStop(1, '#1c0d06');
     ctx.fillStyle = poleGrad;
-    ctx.fillRect(px, py + 12, 10, poleH);
+    ctx.fillRect(px, py + 8, 11, poleH);
 
     // Ring penguat tiang emas
     ctx.fillStyle = '#eab308';
-    ctx.fillRect(px - 1, py + 22, 12, 3);
-    ctx.fillRect(px - 1, py + this.flagHeight + 24, 12, 3);
+    ctx.fillRect(px - 1, py + 20, 13, 3.5);
+    ctx.fillRect(px - 1, py + this.flagHeight + 22, 13, 3.5);
 
     // Bola emas di ujung tiang
     ctx.fillStyle = '#fef08a';
     ctx.beginPath();
-    ctx.arc(px + 5, py + 6, 8, 0, Math.PI * 2);
+    ctx.arc(px + 5.5, py + 6, 8.5, 0, Math.PI * 2);
     ctx.fill();
+
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
   }
 
   drawRopes(ctx, fx, fy) {
@@ -320,22 +341,14 @@ class WavingFlag {
 // Inisialisasi bendera pada tiang kapal utama
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('shipMastFlagCanvas')) {
-    window.shipMastFlagInstance = new WavingFlag('shipMastFlagCanvas', 'assets/parampa-logo.png', { hasPole: false });
+    window.shipMastFlagInstance = new WavingFlag('shipMastFlagCanvas', 'assets/parampa-logo.png', { hasPole: true });
   } else if (document.getElementById('parampaFlagCanvas')) {
-    window.parampaFlagInstance = new WavingFlag('parampaFlagCanvas', 'assets/parampa-logo.png', { hasPole: false });
+    window.parampaFlagInstance = new WavingFlag('parampaFlagCanvas', 'assets/parampa-logo.png', { hasPole: true });
   }
 });
 
 window.addEventListener('load', () => {
   if (window.shipMastFlagInstance) {
     window.shipMastFlagInstance.initCanvasSize();
-  }
-  const shipImg = document.querySelector('.ship-scene-img');
-  if (shipImg) {
-    shipImg.addEventListener('load', () => {
-      if (window.shipMastFlagInstance) {
-        window.shipMastFlagInstance.initCanvasSize();
-      }
-    });
   }
 });
