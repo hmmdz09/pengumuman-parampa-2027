@@ -196,8 +196,8 @@ function displayAnnouncementResult(staff, queryData) {
         </button>
 
         <div class="pass-header">
-          <div class="pass-seal">
-            <i class="fa-solid fa-anchor"></i>
+          <div class="pass-seal" style="background: none; border: none; box-shadow: none;">
+            <img src="assets/parampa-logo.png" alt="Logo Resmi PARAMPA" style="width: 65px; height: 65px; border-radius: 50%; box-shadow: 0 4px 15px rgba(234, 179, 8, 0.5); border: 2px solid #eab308;">
           </div>
           <span class="pass-badge">SURAT KEPUTUSAN RESMI • PARAMPA 2026-2027</span>
           <h2 class="pass-title">PIRATE FLEET BOARDING PASS</h2>

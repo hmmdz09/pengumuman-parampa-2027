@@ -31,7 +31,7 @@
     <div class="entrance-card">
       <div class="entrance-glow-ring"></div>
       <div class="entrance-helm-icon">
-        <i class="fa-solid fa-dharmachakra"></i>
+        <img src="assets/parampa-logo.png" alt="Logo Resmi PARAMPA" style="width: 74px; height: 74px; border-radius: 50%; box-shadow: 0 0 25px rgba(234, 179, 8, 0.6); border: 2px solid #eab308;">
       </div>
       <div class="entrance-badge">
         <i class="fa-solid fa-skull-crossbones"></i> EKSPEDISI RESMI PARAMPA 2026-2027
@@ -67,9 +67,7 @@
   <nav class="navbar">
     <div class="container">
       <a href="#hero" class="nav-brand">
-        <div class="brand-icon">
-          <i class="fa-solid fa-dharmachakra"></i>
-        </div>
+        <img src="assets/parampa-logo.png" alt="Logo Resmi PARAMPA" class="brand-logo-img">
         <div>
           <span class="brand-title">PARAMPA</span>
           <span class="brand-sub">2026 - 2027 • FPMIPA UPI</span>
@@ -131,6 +129,20 @@
       </div>
 
       <div class="hero-visual">
+        <!-- Bendera Resmi Armada Berkibar Real-time -->
+        <div class="flagship-showcase-box">
+          <div class="flagship-header">
+            <div class="flagship-badge">
+              <span class="pulse-dot"></span> BENDERA RESMI ARMADA PARAMPA
+            </div>
+            <span class="flag-hint"><i class="fa-solid fa-wind"></i> Berkibar Realtime • Sentuh untuk Hembus Angin</span>
+          </div>
+          <div class="flag-canvas-container" title="Klik atau arahkan kursor untuk menghembus angin laut!">
+            <canvas id="parampaFlagCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Poster Resmi PARAMPA -->
         <div class="hero-poster-wrapper">
           <img src="assets/parampa-poster.jpg" alt="Poster Resmi PARAMPA 2026-2027 We're Back" class="hero-poster-img" id="heroPoster">
           <div class="poster-floating-tag">
@@ -388,6 +400,7 @@
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
+  <script src="js/flag.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
