@@ -44,9 +44,9 @@ const DIVISIONS = {
     color: "#eab308",
     description: "Mengelola persuratan, administrasi armada, perizinan, notulensi rapat akbar, dan tata kelola arsip resmi PARAMPA 2026-2027.",
     coordinator: {
-      name: "Carissa Haifa / Zaidan",
-      phone: "6281234567801",
-      role: "Koordinator Sekretariat"
+      name: "Nayla",
+      phone: "6285694159733",
+      role: "Sekretaris PARAMPA 2026-2027"
     }
   },
   "BENDAHARA": {
@@ -57,9 +57,9 @@ const DIVISIONS = {
     color: "#f59e0b",
     description: "Mengelola arus peti kas, anggaran per divisi, transparansi keuangan, dan sirkulasi dana operasional petualangan PARAMPA.",
     coordinator: {
-      name: "Chery Tio Madeline S.",
-      phone: "6281234567802",
-      role: "Koordinator Keuangan"
+      name: "Amanda",
+      phone: "6281223203674",
+      role: "Bendahara PARAMPA 2026-2027"
     }
   },
   "ACARA PERLOMBAAN": {
@@ -70,8 +70,8 @@ const DIVISIONS = {
     color: "#ef4444",
     description: "Merancang konsep teknis kompetisi, aturan main perlombaan, juri, penilaian, dan memandu jalannya arena persaingan maritim.",
     coordinator: {
-      name: "Adiba Adzkia / Tim Acara",
-      phone: "6281234567803",
+      name: "Ryan",
+      phone: "62895385854623",
       role: "Koordinator Acara Perlombaan"
     }
   },
@@ -83,9 +83,9 @@ const DIVISIONS = {
     color: "#ec4899",
     description: "Meramu pertunjukan megah pembukaan dan penutupan pesta PARAMPA, panggung hiburan, seremonial bendera bajak laut, dan penampilan spesial.",
     coordinator: {
-      name: "Azmi Triani Putri",
-      phone: "6281234567804",
-      role: "Koordinator Opening & Closing"
+      name: "Dinda",
+      phone: "628970634900",
+      role: "Koordinator Acara Opening & Closing"
     }
   },
   "HUMAS": {
@@ -96,8 +96,8 @@ const DIVISIONS = {
     color: "#3b82f6",
     description: "Menjadi garda terdepan komunikasi luar armada, penghubung antar-instansi, undangan sekolah/kampus, publikasi relasi, dan media partner.",
     coordinator: {
-      name: "Adzka Dzikra / Alifia R.",
-      phone: "6281234567805",
+      name: "Kamila",
+      phone: "6282319548380",
       role: "Koordinator Divisi Humas"
     }
   },
@@ -109,8 +109,8 @@ const DIVISIONS = {
     color: "#10b981",
     description: "Menjaga kebugaran, kesehatan, dan keselamatan seluruh awak kru kapal serta peserta petualangan sepanjang rute PARAMPA 2026-2027.",
     coordinator: {
-      name: "Alifia Novi Earlydani",
-      phone: "6281234567806",
+      name: "Hamdi",
+      phone: "6282288206271",
       role: "Koordinator Divisi Medis"
     }
   },
@@ -122,8 +122,8 @@ const DIVISIONS = {
     color: "#8b5cf6",
     description: "Menyiapkan perlengkapan panggung, tata letak lokasi, akomodasi penonton, pergerakan massa suporter, serta logistik kapal.",
     coordinator: {
-      name: "Abdul Bais / Alya Kamilia",
-      phone: "6281234567807",
+      name: "Arif",
+      phone: "6281316411445",
       role: "Koordinator Spektator & Logistik"
     }
   },
@@ -135,9 +135,9 @@ const DIVISIONS = {
     color: "#14b8a6",
     description: "Menghimpun pundi-pundi emas melalui kerja sama kemitraan sponsor eksternal, bazar wirausaha kreatif, merchandise, dan fundraising armada.",
     coordinator: {
-      name: "Dea Aufa / Intan Fadilla",
-      phone: "6281234567808",
-      role: "Koordinator Sponsor & Danus"
+      name: "Koordinator Danus",
+      phone: "6285797904702",
+      role: "Koordinator Sponsor & Dana Usaha"
     }
   },
   "PDDD": {
@@ -148,8 +148,8 @@ const DIVISIONS = {
     color: "#f97316",
     description: "Mengabadikan setiap momentum petualangan maritim lewat lensa foto & video, visual branding bajak laut yang memukau, feed media sosial, dan dekorasi megah.",
     coordinator: {
-      name: "Aida Nuryanti / Ananda Rizqiya",
-      phone: "6281234567809",
+      name: "Muthia",
+      phone: "6285722441937",
       role: "Koordinator Divisi PDDD"
     }
   }

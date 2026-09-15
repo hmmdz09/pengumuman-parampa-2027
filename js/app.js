@@ -103,8 +103,8 @@ function initAutocomplete() {
       const div = document.createElement('div');
       div.className = 'autocomplete-item';
       div.innerHTML = `
-        <span><strong>${highlightMatch(item.name, val)}</strong> (${item.prodi})</span>
-        <span class="item-nim">${item.nim}</span>
+        <span><strong>${highlightMatch(item.name, val)}</strong></span>
+        <span class="item-nim">${item.prodi}</span>
       `;
       div.addEventListener('click', () => {
         nameInput.value = item.name;
@@ -142,18 +142,18 @@ function initSearchForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const nameVal = (document.getElementById('searchName').value || '').trim();
-    const nimVal = (document.getElementById('searchNim').value || '').trim();
+    const nimInput = document.getElementById('searchNim');
+    const nimVal = nimInput ? (nimInput.value || '').trim() : '';
     const prodiVal = (document.getElementById('searchProdi').value || '').trim();
 
-    if (!nameVal || !nimVal || !prodiVal) {
-      alert("Harap masukkan Nama Lengkap, NIM, dan pilih Program Studi Anda terlebih dahulu untuk membuka hasil pengumuman dan direktori kru kapal!");
+    if (!nameVal || !prodiVal) {
+      alert("Harap masukkan Nama Lengkap dan pilih Program Studi Anda terlebih dahulu untuk membuka hasil pengumuman dan direktori kru kapal!");
       if (!nameVal) document.getElementById('searchName').focus();
-      else if (!nimVal) document.getElementById('searchNim').focus();
       else if (!prodiVal) document.getElementById('searchProdi').focus();
       return;
     }
 
-    // Buka segel direktori seluruh kru kapal begitu Nama, NIM, dan Prodi telah dimasukkan
+    // Buka segel direktori seluruh kru kapal begitu Nama dan Prodi telah dimasukkan
     unlockCrewDirectory();
 
     // Eksekusi pencarian
@@ -282,18 +282,9 @@ function displayAnnouncementResult(staff, queryData) {
         </div>
 
         <div class="pass-actions">
-          <div class="action-row">
-            <a href="${waCoordinatorUrl}" target="_blank" class="btn-pass btn-whatsapp" onclick="playSfx('click')">
-              <i class="fa-brands fa-whatsapp"></i> Hubungi Koordinator Divisi
-            </a>
-            <a href="${PARAMPA_CONFIG.waGroupGeneral}" target="_blank" class="btn-pass btn-group-wa" onclick="playSfx('click')">
-              <i class="fa-solid fa-users"></i> Gabung Grup Kru Kapal
-            </a>
-          </div>
-
-          <button class="btn-pass btn-download-pass" onclick="generateAndDownloadCard()" title="Download kartu untuk story media sosial">
-            <i class="fa-solid fa-download"></i> Unduh Boarding Pass (Kartu Story IG/WA)
-          </button>
+          <a href="${waCoordinatorUrl}" target="_blank" class="btn-pass btn-whatsapp" onclick="playSfx('click')">
+            <i class="fa-brands fa-whatsapp"></i> Hubungi Koordinator Divisi
+          </a>
         </div>
       </div>
     `;
@@ -443,7 +434,7 @@ function initDirectoryTabs() {
           const nameInput = document.getElementById('searchName');
           if (nameInput) nameInput.focus();
         }
-        alert("⚓ Direktori Kru Tersegel!\nHarap masukkan Nama Lengkap, NIM, dan Program Studi Anda pada formulir cek kelulusan terlebih dahulu untuk membuka daftar kru kapal.");
+        alert("⚓ Direktori Kru Tersegel!\nHarap masukkan Nama Lengkap dan Program Studi Anda pada formulir cek kelulusan terlebih dahulu untuk membuka daftar kru kapal.");
       }
     });
   }

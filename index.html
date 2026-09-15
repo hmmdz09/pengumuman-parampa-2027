@@ -149,7 +149,7 @@
         <div class="search-card">
           <div class="search-header">
             <h2><i class="fa-solid fa-scroll text-gold"></i> Cek Status Kelulusan Kru</h2>
-            <p>Ketik Nama Lengkap, NIM, serta Program Studi Anda untuk membuka hasil pengumuman dan kontak koordinator.</p>
+            <p>Ketik Nama Lengkap serta Program Studi Anda untuk membuka hasil pengumuman dan kontak koordinator.</p>
           </div>
 
           <form id="parampaSearchForm" class="search-form" autocomplete="off">
@@ -161,15 +161,6 @@
                 <input type="text" id="searchName" class="form-control" placeholder="Contoh: Carissa Haifa..." required>
                 <!-- Autocomplete Container -->
                 <div id="autocompleteList" class="autocomplete-list"></div>
-              </div>
-            </div>
-
-            <!-- Input NIM -->
-            <div class="form-group">
-              <label for="searchNim"><i class="fa-solid fa-hashtag"></i> NIM (7 Digit)</label>
-              <div class="input-with-icon">
-                <i class="fa-solid fa-barcode input-icon"></i>
-                <input type="text" id="searchNim" class="form-control" placeholder="Contoh: 2503686" pattern="[0-9]*" required>
               </div>
             </div>
 
@@ -192,7 +183,7 @@
           </form>
 
           <p class="search-helper-text">
-            <i class="fa-solid fa-lock text-gold"></i> Masukkan <strong>Nama Lengkap</strong>, <strong>NIM</strong>, dan <strong>Program Studi</strong> Anda untuk melihat hasil seleksi resmi serta membuka segel Direktori Kru Kapal.
+            <i class="fa-solid fa-lock text-gold"></i> Masukkan <strong>Nama Lengkap</strong> dan <strong>Program Studi</strong> Anda untuk melihat hasil seleksi resmi serta membuka segel Direktori Kru Kapal.
           </p>
         </div>
       </div>
@@ -210,7 +201,7 @@
         </p>
       </div>
 
-      <!-- Locked State (Tampil jika belum memasukkan Nama, NIM, dan Prodi) -->
+      <!-- Locked State (Tampil jika belum memasukkan Nama dan Prodi) -->
       <div class="directory-locked-gate" id="directoryLockedGate">
         <div class="locked-gate-icon">
           <i class="fa-solid fa-lock"></i>
@@ -220,7 +211,7 @@
         </div>
         <h3 class="locked-gate-title">Daftar Kru Kapal Masih Terkunci</h3>
         <p class="locked-gate-desc">
-          Untuk menjaga kerahasiaan armada, daftar seluruh kru kapal hanya dapat dibuka setelah Anda memasukkan <strong>Nama Lengkap</strong>, <strong>NIM</strong>, dan <strong>Program Studi</strong> Anda pada formulir cek kelulusan di atas.
+          Untuk menjaga kerahasiaan armada, daftar seluruh kru kapal hanya dapat dibuka setelah Anda memasukkan <strong>Nama Lengkap</strong> dan <strong>Program Studi</strong> Anda pada formulir cek kelulusan di atas.
         </p>
         <a href="#cek-hasil" class="btn-unlock-dir" id="btnGoToSearch">
           <i class="fa-solid fa-key"></i> Masukkan Identitas untuk Buka Segel
