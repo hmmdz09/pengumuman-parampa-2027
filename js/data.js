@@ -148,8 +148,8 @@ const DIVISIONS = {
     color: "#f97316",
     description: "Mengabadikan setiap momentum petualangan maritim lewat lensa foto & video, visual branding bajak laut yang memukau, feed media sosial, dan dekorasi megah.",
     coordinator: {
-      name: "Muthia",
-      phone: "6285722441937",
+      name: "Syakira",
+      phone: "6287726836023",
       role: "Koordinator Divisi PDDD"
     }
   }

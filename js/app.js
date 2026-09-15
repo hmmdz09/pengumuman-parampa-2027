@@ -6,7 +6,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initProdiDropdown();
   initSearchForm();
-  initAutocomplete();
   initDirectoryTabs();
   initAudioSystem();
   initAmbientParticles();
@@ -75,64 +74,6 @@ function findStaff(nameQuery, nimQuery, prodiQuery) {
   return null;
 }
 
-function initAutocomplete() {
-  const nameInput = document.getElementById('searchName');
-  const autocompleteList = document.getElementById('autocompleteList');
-  const nimInput = document.getElementById('searchNim');
-  const prodiSelect = document.getElementById('searchProdi');
-
-  if (!nameInput || !autocompleteList) return;
-
-  nameInput.addEventListener('input', (e) => {
-    const val = e.target.value.trim().toLowerCase();
-    autocompleteList.innerHTML = '';
-    
-    if (val.length < 2) {
-      autocompleteList.style.display = 'none';
-      return;
-    }
-
-    const matches = STAFF_MEMBERS.filter(m => m.name.toLowerCase().includes(val)).slice(0, 6);
-
-    if (matches.length === 0) {
-      autocompleteList.style.display = 'none';
-      return;
-    }
-
-    matches.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'autocomplete-item';
-      div.innerHTML = `
-        <span><strong>${highlightMatch(item.name, val)}</strong></span>
-        <span class="item-nim">${item.prodi}</span>
-      `;
-      div.addEventListener('click', () => {
-        nameInput.value = item.name;
-        if (nimInput) nimInput.value = item.nim;
-        if (prodiSelect) prodiSelect.value = item.prodi;
-        autocompleteList.style.display = 'none';
-        // Putar suara klik pelaut
-        playSfx('click');
-      });
-      autocompleteList.appendChild(div);
-    });
-
-    autocompleteList.style.display = 'block';
-  });
-
-  // Sembunyikan ketika klik di luar
-  document.addEventListener('click', (e) => {
-    if (!nameInput.contains(e.target) && !autocompleteList.contains(e.target)) {
-      autocompleteList.style.display = 'none';
-    }
-  });
-}
-
-function highlightMatch(text, query) {
-  const regex = new RegExp(`(${query})`, 'gi');
-  return text.replace(regex, '<span style="color: #fed766; text-decoration: underline;">$1</span>');
-}
-
 function initSearchForm() {
   const form = document.getElementById('parampaSearchForm');
   const resetBtn = document.getElementById('btnResetSearch');
@@ -143,17 +84,18 @@ function initSearchForm() {
     e.preventDefault();
     const nameVal = (document.getElementById('searchName').value || '').trim();
     const nimInput = document.getElementById('searchNim');
-    const nimVal = nimInput ? (nimInput.value || '').trim() : '';
+    const nimVal = (nimInput ? nimInput.value : '').trim();
     const prodiVal = (document.getElementById('searchProdi').value || '').trim();
 
-    if (!nameVal || !prodiVal) {
-      alert("Harap masukkan Nama Lengkap dan pilih Program Studi Anda terlebih dahulu untuk membuka hasil pengumuman dan direktori kru kapal!");
+    if (!nameVal || !nimVal || !prodiVal) {
+      alert("Harap masukkan Nama Lengkap, NIM, dan pilih Program Studi Anda terlebih dahulu untuk membuka hasil pengumuman dan direktori kru kapal!");
       if (!nameVal) document.getElementById('searchName').focus();
+      else if (!nimVal) document.getElementById('searchNim').focus();
       else if (!prodiVal) document.getElementById('searchProdi').focus();
       return;
     }
 
-    // Buka segel direktori seluruh kru kapal begitu Nama dan Prodi telah dimasukkan
+    // Buka segel direktori seluruh kru kapal begitu Nama, NIM, dan Prodi telah dimasukkan
     unlockCrewDirectory();
 
     // Eksekusi pencarian
@@ -434,7 +376,7 @@ function initDirectoryTabs() {
           const nameInput = document.getElementById('searchName');
           if (nameInput) nameInput.focus();
         }
-        alert("⚓ Direktori Kru Tersegel!\nHarap masukkan Nama Lengkap dan Program Studi Anda pada formulir cek kelulusan terlebih dahulu untuk membuka daftar kru kapal.");
+        alert("⚓ Direktori Kru Tersegel!\nHarap masukkan Nama Lengkap, NIM, dan Program Studi Anda pada formulir cek kelulusan terlebih dahulu untuk membuka daftar kru kapal.");
       }
     });
   }
