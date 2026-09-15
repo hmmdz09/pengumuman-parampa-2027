@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman Hasil Oprec Panitia PARAMPA 2026-2027 | FPMIPA UPI</title>
+  <meta name="description" content="Website Resmi Pengumuman Hasil Seleksi Open Recruitment Panitia PARAMPA 2026-2027 FPMIPA Universitas Pendidikan Indonesia. Cek status kelulusan Anda dan hubungi koordinator divisi.">
+  <meta name="theme-color" content="#060e1a">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Pirata+One&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- YouTube IFrame API for Background Pirate Soundtrack -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <!-- Theme Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Modern Interactive Entrance Overlay ("Apakah Kamu Sudah Bersiap Untuk Berlayar?") -->
+  <div class="entrance-overlay" id="entranceOverlay">
+    <div class="entrance-card">
+      <div class="entrance-glow-ring"></div>
+      <div class="entrance-helm-icon">
+        <i class="fa-solid fa-dharmachakra"></i>
+      </div>
+      <div class="entrance-badge">
+        <i class="fa-solid fa-skull-crossbones"></i> EKSPEDISI RESMI PARAMPA 2026-2027
+      </div>
+      <h1 class="entrance-question">
+        Apakah Kamu Sudah Bersiap Untuk Berlayar?
+      </h1>
+      <p class="entrance-desc">
+        Kencangkan sabuk petualanganmu, dengarkan gemuruh himne orkestra bajak laut, dan buka pintu pengumuman resmi kru kapal PARAMPA FPMIPA UPI.
+      </p>
+
+      <div class="audio-track-pill">
+        <span class="pulse-dot"></span>
+        <i class="fa-solid fa-music"></i>
+        <span>Soundtrack: Cinematic Pirates & Celtic Anthem</span>
+      </div>
+
+      <div class="entrance-actions">
+        <button class="btn-entrance-sail" id="btnStartVoyage">
+          <i class="fa-solid fa-anchor"></i> Ya, Angkat Jangkar & Putar Musik!
+        </button>
+        <button class="btn-entrance-mute" id="btnSkipAudio">
+          <i class="fa-solid fa-volume-xmark"></i> Masuk Tanpa Musik
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ambient Oceanic Floating Elements -->
+  <div class="ocean-ambient" id="oceanAmbient"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-dharmachakra"></i>
+        </div>
+        <div>
+          <span class="brand-title">PARAMPA</span>
+          <span class="brand-sub">2026 - 2027 • FPMIPA UPI</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="#cek-hasil"><i class="fa-solid fa-magnifying-glass"></i> Cek Kelulusan</a></li>
+          <li><a href="#direktori"><i class="fa-solid fa-users"></i> Daftar Kru</a></li>
+          <li><a href="#timeline"><i class="fa-solid fa-map-location-dot"></i> Rute Agenda</a></li>
+          <li><a href="#faq"><i class="fa-solid fa-circle-question"></i> Bantuan</a></li>
+        </ul>
+
+        <button class="audio-toggle-btn" id="audioToggleBtn" title="Aktifkan / Matikan Efek Suara">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>Suara: ON</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-skull-crossbones"></i>
+          <span>PENGUMUMAN RESMI OPREC PANITIA</span>
+        </div>
+
+        <h1 class="hero-title">
+          SELAMAT DATANG DI KAPAL
+          <span>PARAMPA 2026-2027</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Tabir rahasia petualangan maritim telah terbuka! Masukkan identitas Anda untuk melihat surat keputusan resmi dan divisi penempatan Anda dalam ekspedisi PARAMPA FPMIPA UPI.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="stat-number">125+</span>
+            <span class="stat-label">Kru Terpilih</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">9</span>
+            <span class="stat-label">Divisi Armada</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Tujuan Puncak</span>
+          </div>
+        </div>
+
+        <a href="#cek-hasil" class="btn-search" style="text-decoration: none;">
+          <i class="fa-solid fa-compass"></i> Cek Pengumuman Sekarang
+        </a>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-poster-wrapper">
+          <img src="assets/parampa-poster.jpg" alt="Poster Resmi PARAMPA 2026-2027 We're Back" class="hero-poster-img" id="heroPoster">
+          <div class="poster-floating-tag">
+            <i class="fa-solid fa-anchor"></i> WE'RE BACK!
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Check Section (Formulir Pengecekan) -->
+  <section class="check-section" id="cek-hasil">
+    <div class="container">
+      <div class="search-card-outer">
+        <div class="search-card">
+          <div class="search-header">
+            <h2><i class="fa-solid fa-scroll text-gold"></i> Cek Status Kelulusan Kru</h2>
+            <p>Ketik Nama Lengkap, NIM, serta Program Studi Anda untuk membuka hasil pengumuman dan kontak koordinator.</p>
+          </div>
+
+          <form id="parampaSearchForm" class="search-form" autocomplete="off">
+            <!-- Input Nama -->
+            <div class="form-group">
+              <label for="searchName"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-id-card input-icon"></i>
+                <input type="text" id="searchName" class="form-control" placeholder="Contoh: Carissa Haifa..." required>
+                <!-- Autocomplete Container -->
+                <div id="autocompleteList" class="autocomplete-list"></div>
+              </div>
+            </div>
+
+            <!-- Input NIM -->
+            <div class="form-group">
+              <label for="searchNim"><i class="fa-solid fa-hashtag"></i> NIM (7 Digit)</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-barcode input-icon"></i>
+                <input type="text" id="searchNim" class="form-control" placeholder="Contoh: 2503686" pattern="[0-9]*">
+              </div>
+            </div>
+
+            <!-- Select Prodi -->
+            <div class="form-group">
+              <label for="searchProdi"><i class="fa-solid fa-graduation-cap"></i> Program Studi</label>
+              <div class="input-with-icon">
+                <i class="fa-solid fa-book-open input-icon"></i>
+                <select id="searchProdi" class="form-control">
+                  <option value="">-- Pilih Program Studi --</option>
+                  <!-- Populated by JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-search">
+              <i class="fa-solid fa-magnifying-glass"></i> Cek Hasil
+            </button>
+          </form>
+
+          <p class="search-helper-text">
+            <i class="fa-solid fa-circle-info text-cyan"></i> Tips: Anda juga dapat mencari dengan cukup memasukkan <strong>NIM</strong> saja atau melihat seluruh anggota di bagian <a href="#direktori">Direktori Kru Kapal</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directory Section (Daftar Seluruh Kru Kapal) -->
+  <section class="directory-section" id="direktori">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">DAFTAR RESMI ARMADA</span>
+        <h2 class="section-title">Direktori <span>Seluruh Kru Kapal</span></h2>
+        <p class="section-desc">
+          Jelajahi nama rekan pelaut Anda berdasarkan divisi masing-masing. Klik pada kartu nama staf untuk membuka rincian dan kartu pengumuman.
+        </p>
+      </div>
+
+      <!-- Division Tabs -->
+      <div class="division-tabs-container">
+        <div class="division-tabs" id="divisionTabs">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Division Info Card -->
+      <div class="division-info-card" id="divisionInfoCard">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Live Search & Counter -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 20px;">
+        <div class="dir-search-bar" style="margin-bottom: 0;">
+          <input type="text" id="dirSearchInput" placeholder="Cari nama, NIM, atau prodi kru...">
+        </div>
+        <div id="dirShowingCount" style="font-size: 0.88rem; color: var(--text-muted);">
+          Memuat kru...
+        </div>
+      </div>
+
+      <!-- Staff Cards Grid -->
+      <div class="staff-grid" id="staffGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section (Sailor's Route) -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PETA RUTE PELAYARAN</span>
+        <h2 class="section-title">Timeline <span>Agenda Panitia</span></h2>
+        <p class="section-desc">
+          Catat tanggal-tanggal krusial dalam perjalanan panitia PARAMPA 2026-2027.
+        </p>
+      </div>
+
+      <div class="timeline-flow">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date"><i class="fa-regular fa-calendar-check"></i> 15 September 2026</div>
+            <div class="timeline-title">Pengumuman Kelulusan Resmi Kru Kapal</div>
+            <div class="timeline-desc">Rilis hasil seleksi panitia PARAMPA 2026-2027 melalui portal website resmi.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date"><i class="fa-regular fa-calendar-check"></i> 18 September 2026</div>
+            <div class="timeline-title">Konfirmasi & Masuk Grup Divisi</div>
+            <div class="timeline-desc">Batas akhir staf terpilih untuk menghubungi Koordinator Divisi dan bergabung ke WhatsApp Group resmi.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date"><i class="fa-regular fa-calendar-check"></i> 20 September 2026</div>
+            <div class="timeline-title">First Gathering Akbar Kru Kapal</div>
+            <div class="timeline-desc">Temu perdana seluruh panitia di Kompleks FPMIPA UPI. Sosialisasi garis besar acara dan perkenalan armada.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date"><i class="fa-regular fa-calendar-check"></i> Oktober 2026 - Januari 2027</div>
+            <div class="timeline-title">Masa Persiapan & Ekspedisi Teknis</div>
+            <div class="timeline-desc">Penyusunan konsep perlombaan, gladi pembukaan/penutupan, publikasi, penggalangan dana sponsor, dan logistik.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date"><i class="fa-regular fa-calendar-check"></i> Februari 2027</div>
+            <div class="timeline-title">Puncak Acara Akbar PARAMPA 2027</div>
+            <div class="timeline-desc">Pelaksanaan pesta perlombaan dan panggung akbar sains & seni maritim PARAMPA!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ & Helpdesk Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PANDUAN & BANTUAN</span>
+        <h2 class="section-title">Pertanyaan <span>Sering Diajukan</span></h2>
+        <p class="section-desc">
+          Segala hal yang perlu Anda ketahui setelah melihat hasil pengumuman oprec.
+        </p>
+      </div>
+
+      <div class="faq-grid" id="faqList">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Contact Hub Card -->
+      <div class="contact-hub-card">
+        <div class="contact-hub-title">
+          <i class="fa-solid fa-headset text-gold"></i> Pusat Bantuan & Narahubung Panitia
+        </div>
+        <p class="contact-hub-subtitle">
+          Ada pertanyaan seputar hasil seleksi, konfirmasi nama, atau kendala teknis? Jangan ragu menghubungi tim pusat bantuan PARAMPA.
+        </p>
+
+        <div class="contact-buttons-row">
+          <a href="https://wa.me/6281234567890?text=Halo%20Helpdesk%20PARAMPA,%20saya%20ingin%20bertanya%20seputar%20pengumuman%20oprec" target="_blank" class="btn-pass btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Chat Helpdesk Oprec
+          </a>
+          <a href="https://wa.me/6281234567891?text=Halo%20Kapten%20Pelaksana%20PARAMPA,%20saya%20staf%20panitia%20PARAMPA%202026-2027" target="_blank" class="btn-pass btn-download-pass">
+            <i class="fa-solid fa-crown"></i> Hubungi Ketua Pelaksana
+          </a>
+          <a href="https://chat.whatsapp.com/invite/PARAMPA2027GeneralFleet" target="_blank" class="btn-pass btn-group-wa">
+            <i class="fa-solid fa-comments"></i> Link Grup WA Panitia
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo-text">PARAMPA 2026-2027</div>
+      <p class="footer-copy">
+        © 2026 Panitia Pelaksana PARAMPA • Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam (FPMIPA)<br>
+        Universitas Pendidikan Indonesia, Bandung.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal Announcement Result (Sailor Boarding Pass) -->
+  <div id="resultModal" class="modal-backdrop">
+    <div class="modal-dialog" id="modalContent">
+      <!-- Injected by app.js -->
+    </div>
+  </div>
+
+  <!-- Floating Modern Music Controller Widget -->
+  <div class="music-floating-widget" id="musicFloatingWidget">
+    <div class="music-widget-left">
+      <div class="equalizer-bars" id="equalizerBars">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+        <span class="bar bar-4"></span>
+      </div>
+      <div class="music-info">
+        <span class="music-title">Cinematic Pirates Anthem</span>
+        <span class="music-sub">PARAMPA 2026-2027 OST</span>
+      </div>
+    </div>
+    <div class="music-controls">
+      <button class="music-ctrl-btn" id="btnToggleMusic" title="Play/Pause Musik">
+        <i class="fa-solid fa-pause" id="musicPlayPauseIcon"></i>
+      </button>
+      <button class="music-ctrl-btn" id="btnMuteMusic" title="Mute/Unmute">
+        <i class="fa-solid fa-volume-high" id="musicMuteIcon"></i>
+      </button>
+      <input type="range" class="music-vol-slider" id="musicVolumeSlider" min="0" max="100" value="75" title="Volume">
+    </div>
+  </div>
+
+  <!-- Hidden YouTube Audio Player Container -->
+  <div id="ytAudioContainer" style="position: absolute; width: 1px; height: 1px; left: -9999px; overflow: hidden; pointer-events: none;">
+    <div id="ytPlayer"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
