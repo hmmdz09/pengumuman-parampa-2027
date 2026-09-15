@@ -311,17 +311,18 @@ const STAFF_MEMBERS = [
   { no: 12, name: "Meiars Alisa Istiaji", nim: "2505631", prodi: "Pendidikan Matematika", division: "PDDD" },
   { no: 13, name: "Mona Sapta Nurcholisa", nim: "2521378", prodi: "Pendidikan Biologi", division: "PDDD" },
   { no: 14, name: "Muhammad Nazarudin", nim: "2503796", prodi: "Matematika", division: "PDDD" },
-  { no: 15, name: "Reyha Qaidah Rafifah", nim: "2502134", prodi: "Fisika", division: "PDDD" },
-  { no: 16, name: "Ridwan Nur Zidan", nim: "2505635", prodi: "Pendidikan Ilmu Komputer", division: "PDDD" },
-  { no: 17, name: "Rosita Dewi", nim: "2505612", prodi: "Pendidikan Biologi", division: "PDDD" },
-  { no: 18, name: "Salma Balqis Nurliena", nim: "2405804", prodi: "Pendidikan Biologi", division: "PDDD" },
-  { no: 19, name: "Salma Nabila", nim: "2509514", prodi: "Pendidikan Ilmu Komputer", division: "PDDD" },
-  { no: 20, name: "Salsabila Mutiara Islami Benamen", nim: "2604644", prodi: "Pendidikan Biologi", division: "PDDD" },
-  { no: 21, name: "Salsabila Yasmin", nim: "2505640", prodi: "Pendidikan Biologi", division: "PDDD" },
-  { no: 22, name: "Siti Ainunnisa", nim: "2503209", prodi: "IPSE", division: "PDDD" },
-  { no: 23, name: "Suhaa Athifa Khairiyah", nim: "2507038", prodi: "Pendidikan Ilmu Komputer", division: "PDDD" },
-  { no: 24, name: "Syifa Dellarosa", nim: "2403925", prodi: "IPSE", division: "PDDD" },
-  { no: 25, name: "Zahra Agreika Putri Gunawan", nim: "2409742", prodi: "Pendidikan Matematika", division: "PDDD" }
+  { no: 15, name: "Naila Husna Riva'i", nim: "2409259", prodi: "Matematika", division: "PDDD" },
+  { no: 16, name: "Reyha Qaidah Rafifah", nim: "2502134", prodi: "Fisika", division: "PDDD" },
+  { no: 17, name: "Ridwan Nur Zidan", nim: "2505635", prodi: "Pendidikan Ilmu Komputer", division: "PDDD" },
+  { no: 18, name: "Rosita Dewi", nim: "2505612", prodi: "Pendidikan Biologi", division: "PDDD" },
+  { no: 19, name: "Salma Balqis Nurliena", nim: "2405804", prodi: "Pendidikan Biologi", division: "PDDD" },
+  { no: 20, name: "Salma Nabila", nim: "2509514", prodi: "Pendidikan Ilmu Komputer", division: "PDDD" },
+  { no: 21, name: "Salsabila Mutiara Islami Benamen", nim: "2604644", prodi: "Pendidikan Biologi", division: "PDDD" },
+  { no: 22, name: "Salsabila Yasmin", nim: "2505640", prodi: "Pendidikan Biologi", division: "PDDD" },
+  { no: 23, name: "Siti Ainunnisa", nim: "2503209", prodi: "IPSE", division: "PDDD" },
+  { no: 24, name: "Suhaa Athifa Khairiyah", nim: "2507038", prodi: "Pendidikan Ilmu Komputer", division: "PDDD" },
+  { no: 25, name: "Syifa Dellarosa", nim: "2403925", prodi: "IPSE", division: "PDDD" },
+  { no: 26, name: "Zahra Agreika Putri Gunawan", nim: "2409742", prodi: "Pendidikan Matematika", division: "PDDD" }
 ];
 
 const FAQS = [
