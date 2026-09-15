@@ -34,7 +34,7 @@
         <img src="assets/parampa-logo.png" alt="Logo Resmi PARAMPA" style="width: 74px; height: 74px; border-radius: 50%; box-shadow: 0 0 25px rgba(234, 179, 8, 0.6); border: 2px solid #eab308;">
       </div>
       <div class="entrance-badge">
-        <i class="fa-solid fa-skull-crossbones"></i> EKSPEDISI RESMI PARAMPA 2026-2027
+        <i class="fa-solid fa-skull-crossbones"></i> EKSPEDISI PARAMPA 2026-2027
       </div>
       <h1 class="entrance-question">
         Apakah Kamu Sudah Bersiap Untuk Berlayar?
@@ -43,18 +43,9 @@
         Kencangkan sabuk petualanganmu, dengarkan gemuruh himne orkestra bajak laut, dan buka pintu pengumuman resmi kru kapal PARAMPA FPMIPA UPI.
       </p>
 
-      <div class="audio-track-pill">
-        <span class="pulse-dot"></span>
-        <i class="fa-solid fa-music"></i>
-        <span>Soundtrack: Cinematic Pirates & Celtic Anthem</span>
-      </div>
-
       <div class="entrance-actions">
         <button class="btn-entrance-sail" id="btnStartVoyage">
-          <i class="fa-solid fa-anchor"></i> Ya, Angkat Jangkar & Putar Musik!
-        </button>
-        <button class="btn-entrance-mute" id="btnSkipAudio">
-          <i class="fa-solid fa-volume-xmark"></i> Masuk Tanpa Musik
+          <i class="fa-solid fa-anchor"></i> Ya, Angkat Jangkar dan Bentangkan Layar
         </button>
       </div>
     </div>
@@ -77,7 +68,7 @@
       <div class="nav-actions">
         <ul class="nav-links">
           <li><a href="#cek-hasil"><i class="fa-solid fa-magnifying-glass"></i> Cek Kelulusan</a></li>
-          <li><a href="#direktori"><i class="fa-solid fa-users"></i> Daftar Kru</a></li>
+          <li><a href="#direktori" id="navDirektoriLink"><i class="fa-solid fa-lock" id="navDirIcon"></i> <span id="navDirText">Daftar Kru</span></a></li>
         </ul>
 
         <button class="audio-toggle-btn" id="audioToggleBtn" title="Aktifkan / Matikan Efek Suara">
@@ -112,7 +103,7 @@
       <div class="hero-content-card">
         <div class="hero-badge">
           <i class="fa-solid fa-skull-crossbones"></i>
-          <span>PENGUMUMAN RESMI OPREC PANITIA</span>
+          <span>PENGUMUMAN OPEN RECRUITMEN PANITIA</span>
         </div>
 
         <h1 class="hero-title">
@@ -178,7 +169,7 @@
               <label for="searchNim"><i class="fa-solid fa-hashtag"></i> NIM (7 Digit)</label>
               <div class="input-with-icon">
                 <i class="fa-solid fa-barcode input-icon"></i>
-                <input type="text" id="searchNim" class="form-control" placeholder="Contoh: 2503686" pattern="[0-9]*">
+                <input type="text" id="searchNim" class="form-control" placeholder="Contoh: 2503686" pattern="[0-9]*" required>
               </div>
             </div>
 
@@ -187,7 +178,7 @@
               <label for="searchProdi"><i class="fa-solid fa-graduation-cap"></i> Program Studi</label>
               <div class="input-with-icon">
                 <i class="fa-solid fa-book-open input-icon"></i>
-                <select id="searchProdi" class="form-control">
+                <select id="searchProdi" class="form-control" required>
                   <option value="">-- Pilih Program Studi --</option>
                   <!-- Populated by JS -->
                 </select>
@@ -201,7 +192,7 @@
           </form>
 
           <p class="search-helper-text">
-            <i class="fa-solid fa-circle-info text-cyan"></i> Tips: Anda juga dapat mencari dengan cukup memasukkan <strong>NIM</strong> saja atau melihat seluruh anggota di bagian <a href="#direktori">Direktori Kru Kapal</a>.
+            <i class="fa-solid fa-lock text-gold"></i> Masukkan <strong>Nama Lengkap</strong>, <strong>NIM</strong>, dan <strong>Program Studi</strong> Anda untuk melihat hasil seleksi resmi serta membuka segel Direktori Kru Kapal.
           </p>
         </div>
       </div>
@@ -219,31 +210,51 @@
         </p>
       </div>
 
-      <!-- Division Tabs -->
-      <div class="division-tabs-container">
-        <div class="division-tabs" id="divisionTabs">
+      <!-- Locked State (Tampil jika belum memasukkan Nama, NIM, dan Prodi) -->
+      <div class="directory-locked-gate" id="directoryLockedGate">
+        <div class="locked-gate-icon">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="locked-gate-badge">
+          <i class="fa-solid fa-anchor"></i> ARSIP KRU TERSEGEL
+        </div>
+        <h3 class="locked-gate-title">Daftar Kru Kapal Masih Terkunci</h3>
+        <p class="locked-gate-desc">
+          Untuk menjaga kerahasiaan armada, daftar seluruh kru kapal hanya dapat dibuka setelah Anda memasukkan <strong>Nama Lengkap</strong>, <strong>NIM</strong>, dan <strong>Program Studi</strong> Anda pada formulir cek kelulusan di atas.
+        </p>
+        <a href="#cek-hasil" class="btn-unlock-dir" id="btnGoToSearch">
+          <i class="fa-solid fa-key"></i> Masukkan Identitas untuk Buka Segel
+        </a>
+      </div>
+
+      <!-- Unlocked Directory Content (Tersembunyi sampai identitas dimasukkan) -->
+      <div class="directory-unlocked-content" id="directoryUnlockedContent" style="display: none;">
+        <!-- Division Tabs -->
+        <div class="division-tabs-container">
+          <div class="division-tabs" id="divisionTabs">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Division Info Card -->
+        <div class="division-info-card" id="divisionInfoCard">
           <!-- Populated by JS -->
         </div>
-      </div>
 
-      <!-- Division Info Card -->
-      <div class="division-info-card" id="divisionInfoCard">
-        <!-- Populated by JS -->
-      </div>
-
-      <!-- Live Search & Counter -->
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 20px;">
-        <div class="dir-search-bar" style="margin-bottom: 0;">
-          <input type="text" id="dirSearchInput" placeholder="Cari nama, NIM, atau prodi kru...">
+        <!-- Live Search & Counter -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 20px;">
+          <div class="dir-search-bar" style="margin-bottom: 0;">
+            <input type="text" id="dirSearchInput" placeholder="Cari nama, NIM, atau prodi kru...">
+          </div>
+          <div id="dirShowingCount" style="font-size: 0.88rem; color: var(--text-muted);">
+            Memuat kru...
+          </div>
         </div>
-        <div id="dirShowingCount" style="font-size: 0.88rem; color: var(--text-muted);">
-          Memuat kru...
-        </div>
-      </div>
 
-      <!-- Staff Cards Grid -->
-      <div class="staff-grid" id="staffGrid">
-        <!-- Populated by JS -->
+        <!-- Staff Cards Grid -->
+        <div class="staff-grid" id="staffGrid">
+          <!-- Populated by JS -->
+        </div>
       </div>
     </div>
   </section>

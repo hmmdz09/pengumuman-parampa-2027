@@ -141,15 +141,20 @@ function initSearchForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nameVal = document.getElementById('searchName').value;
-    const nimVal = document.getElementById('searchNim').value;
-    const prodiVal = document.getElementById('searchProdi').value;
+    const nameVal = (document.getElementById('searchName').value || '').trim();
+    const nimVal = (document.getElementById('searchNim').value || '').trim();
+    const prodiVal = (document.getElementById('searchProdi').value || '').trim();
 
-    if (!nameVal.trim() && !nimVal.trim()) {
-      alert("Silakan masukkan Nama Lengkap atau NIM Anda untuk mengecek hasil pengumuman.");
-      document.getElementById('searchName').focus();
+    if (!nameVal || !nimVal || !prodiVal) {
+      alert("Harap masukkan Nama Lengkap, NIM, dan pilih Program Studi Anda terlebih dahulu untuk membuka hasil pengumuman dan direktori kru kapal!");
+      if (!nameVal) document.getElementById('searchName').focus();
+      else if (!nimVal) document.getElementById('searchNim').focus();
+      else if (!prodiVal) document.getElementById('searchProdi').focus();
       return;
     }
+
+    // Buka segel direktori seluruh kru kapal begitu Nama, NIM, dan Prodi telah dimasukkan
+    unlockCrewDirectory();
 
     // Eksekusi pencarian
     const result = findStaff(nameVal, nimVal, prodiVal);
@@ -161,6 +166,33 @@ function initSearchForm() {
       form.reset();
       playSfx('click');
     });
+  }
+}
+
+let isCrewDirectoryUnlocked = false;
+
+function unlockCrewDirectory() {
+  isCrewDirectoryUnlocked = true;
+  try {
+    sessionStorage.setItem('parampa_crew_unlocked', 'true');
+  } catch (err) {}
+
+  const lockedGate = document.getElementById('directoryLockedGate');
+  const unlockedContent = document.getElementById('directoryUnlockedContent');
+  const navDirIcon = document.getElementById('navDirIcon');
+  const navDirText = document.getElementById('navDirText');
+
+  if (lockedGate) {
+    lockedGate.style.display = 'none';
+  }
+  if (unlockedContent) {
+    unlockedContent.style.display = 'block';
+  }
+  if (navDirIcon) {
+    navDirIcon.className = 'fa-solid fa-users';
+  }
+  if (navDirText) {
+    navDirText.textContent = 'Daftar Kru';
   }
 }
 
@@ -396,6 +428,44 @@ function initDirectoryTabs() {
   if (dirSearch) {
     dirSearch.addEventListener('input', () => {
       renderStaffList();
+    });
+  }
+
+  // Cek apakah sebelumnya direktori sudah pernah dibuka dalam sesi ini
+  try {
+    if (sessionStorage.getItem('parampa_crew_unlocked') === 'true') {
+      unlockCrewDirectory();
+    }
+  } catch (err) {}
+
+  // Intersepsi klik menu Daftar Kru jika belum dibuka
+  const navDirLink = document.getElementById('navDirektoriLink');
+  if (navDirLink) {
+    navDirLink.addEventListener('click', (e) => {
+      if (!isCrewDirectoryUnlocked) {
+        e.preventDefault();
+        const searchSection = document.getElementById('cek-hasil');
+        if (searchSection) {
+          searchSection.scrollIntoView({ behavior: 'smooth' });
+          const nameInput = document.getElementById('searchName');
+          if (nameInput) nameInput.focus();
+        }
+        alert("⚓ Direktori Kru Tersegel!\nHarap masukkan Nama Lengkap, NIM, dan Program Studi Anda pada formulir cek kelulusan terlebih dahulu untuk membuka daftar kru kapal.");
+      }
+    });
+  }
+
+  // Tombol buka segel pada gerbang terkunci
+  const btnGoToSearch = document.getElementById('btnGoToSearch');
+  if (btnGoToSearch) {
+    btnGoToSearch.addEventListener('click', (e) => {
+      e.preventDefault();
+      const searchSection = document.getElementById('cek-hasil');
+      if (searchSection) {
+        searchSection.scrollIntoView({ behavior: 'smooth' });
+        const nameInput = document.getElementById('searchName');
+        if (nameInput) nameInput.focus();
+      }
     });
   }
 }

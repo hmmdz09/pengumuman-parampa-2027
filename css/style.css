@@ -1034,6 +1034,98 @@ body {
   font-size: 0.95rem;
 }
 
+/* ==========================================================
+   LOCKED GATE: DIREKTORI TERSEGEL SEBELUM MENGISI IDENTITAS
+   ========================================================== */
+.directory-locked-gate {
+  background: rgba(8, 18, 34, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 2px dashed rgba(234, 179, 8, 0.5);
+  border-radius: var(--radius-xl);
+  padding: 50px 30px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 35px auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), var(--gold-glow);
+  transition: var(--transition);
+}
+
+.locked-gate-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background: rgba(234, 179, 8, 0.15);
+  border: 2px solid var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: var(--gold-300);
+  box-shadow: 0 0 25px rgba(234, 179, 8, 0.35);
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.locked-gate-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(225, 29, 72, 0.2);
+  border: 1px solid rgba(225, 29, 72, 0.5);
+  color: #fca5a5;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.locked-gate-title {
+  font-family: var(--font-royal);
+  font-size: 1.8rem;
+  color: var(--gold-300);
+  margin-bottom: 12px;
+}
+
+.locked-gate-desc {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 26px auto;
+}
+
+.btn-unlock-dir {
+  background: var(--gold-gradient);
+  color: var(--text-dark);
+  font-weight: 700;
+  padding: 13px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition);
+}
+
+.btn-unlock-dir:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(234, 179, 8, 0.5);
+}
+
+.directory-unlocked-content {
+  animation: fadeInUnlocked 0.6s ease-out;
+}
+
+@keyframes fadeInUnlocked {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Division Tabs Navigation */
 .division-tabs-container {
   overflow-x: auto;
