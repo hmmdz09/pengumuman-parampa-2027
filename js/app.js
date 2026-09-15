@@ -896,52 +896,11 @@ function initFAQAccordion() {
 }
 
 /* ==========================================================
-   10. MODERN ENTRANCE SCREEN & YOUTUBE AUDIO INTEGRATION
-   Video: https://www.youtube.com/watch?v=XvwR86MvFf0
-   Title: Cinematic Pirates + Celtic Anthem
+   10. MODERN ENTRANCE SCREEN & NATIVE AUDIO CONTROLLER
+   Audio: assets/pirate-anthem.m4a (Cinematic Pirates + Celtic)
+   Source: https://www.youtube.com/watch?v=XvwR86MvFf0
    ========================================================== */
-let ytPlayer = null;
-let isYtReady = false;
-let isYtAudioPlaying = false;
-let isYtMuted = false;
-
-window.onYouTubeIframeAPIReady = function() {
-  try {
-    ytPlayer = new YT.Player('ytPlayer', {
-      height: '100',
-      width: '100',
-      videoId: 'XvwR86MvFf0',
-      playerVars: {
-        autoplay: 0,
-        controls: 0,
-        disablekb: 1,
-        fs: 0,
-        loop: 1,
-        playlist: 'XvwR86MvFf0',
-        modestbranding: 1,
-        rel: 0,
-        playsinline: 1
-      },
-      events: {
-        onReady: (event) => {
-          isYtReady = true;
-          event.target.setVolume(75);
-        },
-        onStateChange: (event) => {
-          if (event.data === YT.PlayerState.PLAYING) {
-            isYtAudioPlaying = true;
-            updateMusicWidgetUI(true);
-          } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-            isYtAudioPlaying = false;
-            updateMusicWidgetUI(false);
-          }
-        }
-      }
-    });
-  } catch (err) {
-    console.log("YouTube API Player Init Note:", err);
-  }
-};
+let isAudioPlaying = false;
 
 function initEntranceScreen() {
   const overlay = document.getElementById('entranceOverlay');
@@ -952,11 +911,11 @@ function initEntranceScreen() {
 
   if (btnStartVoyage) {
     btnStartVoyage.addEventListener('click', () => {
-      // Sembunyikan overlay dengan transisi cinematic
+      // Sembunyikan overlay dengan transisi halus
       overlay.classList.add('hidden-entrance');
       playSfx('click');
 
-      // Putar musik YouTube
+      // Putar musik latar bajak laut
       startPirateSoundtrack();
 
       // Luncurkan confetti selamat datang
@@ -978,83 +937,83 @@ function startPirateSoundtrack() {
     widget.classList.add('active-widget');
   }
 
-  if (ytPlayer && isYtReady) {
-    try {
-      ytPlayer.unMute();
-      ytPlayer.setVolume(75);
-      ytPlayer.playVideo();
-      isYtAudioPlaying = true;
-      updateMusicWidgetUI(true);
-    } catch (e) {
-      console.log("Play video error:", e);
-    }
-  } else {
-    // Jika YouTube player belum siap saat klik, buat interval pengecekan
-    let attempts = 0;
-    const checkInterval = setInterval(() => {
-      attempts++;
-      if (ytPlayer && isYtReady) {
-        clearInterval(checkInterval);
-        try {
-          ytPlayer.unMute();
-          ytPlayer.setVolume(75);
-          ytPlayer.playVideo();
-          isYtAudioPlaying = true;
+  const audio = document.getElementById('pirateAudio');
+  if (audio) {
+    audio.volume = 0.75;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          isAudioPlaying = true;
           updateMusicWidgetUI(true);
-        } catch (e) {}
-      }
-      if (attempts > 20) clearInterval(checkInterval);
-    }, 400);
+        })
+        .catch(err => {
+          console.warn("Autoplay notice:", err);
+          updateMusicWidgetUI(false);
+        });
+    }
   }
 }
 
 function initYouTubeAudio() {
+  const audio = document.getElementById('pirateAudio');
   const btnToggleMusic = document.getElementById('btnToggleMusic');
   const btnMuteMusic = document.getElementById('btnMuteMusic');
   const volSlider = document.getElementById('musicVolumeSlider');
 
+  if (audio) {
+    audio.addEventListener('play', () => {
+      isAudioPlaying = true;
+      updateMusicWidgetUI(true);
+    });
+    audio.addEventListener('pause', () => {
+      isAudioPlaying = false;
+      updateMusicWidgetUI(false);
+    });
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    });
+  }
+
   if (btnToggleMusic) {
     btnToggleMusic.addEventListener('click', () => {
-      if (!ytPlayer || !isYtReady) return;
-      if (isYtAudioPlaying) {
-        ytPlayer.pauseVideo();
-        isYtAudioPlaying = false;
-        updateMusicWidgetUI(false);
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play().then(() => {
+          isAudioPlaying = true;
+          updateMusicWidgetUI(true);
+        }).catch(() => {});
       } else {
-        ytPlayer.playVideo();
-        isYtAudioPlaying = true;
-        updateMusicWidgetUI(true);
+        audio.pause();
+        isAudioPlaying = false;
+        updateMusicWidgetUI(false);
       }
     });
   }
 
   if (btnMuteMusic) {
     btnMuteMusic.addEventListener('click', () => {
-      if (!ytPlayer || !isYtReady) return;
-      if (isYtMuted) {
-        ytPlayer.unMute();
-        isYtMuted = false;
-        btnMuteMusic.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      } else {
-        ytPlayer.mute();
-        isYtMuted = true;
+      if (!audio) return;
+      audio.muted = !audio.muted;
+      if (audio.muted) {
         btnMuteMusic.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+      } else {
+        btnMuteMusic.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
       }
     });
   }
 
   if (volSlider) {
     volSlider.addEventListener('input', (e) => {
-      if (!ytPlayer || !isYtReady) return;
+      if (!audio) return;
       const vol = parseInt(e.target.value, 10);
-      ytPlayer.setVolume(vol);
+      audio.volume = vol / 100;
       if (vol === 0) {
-        ytPlayer.mute();
-        isYtMuted = true;
+        audio.muted = true;
         if (btnMuteMusic) btnMuteMusic.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
-      } else if (isYtMuted) {
-        ytPlayer.unMute();
-        isYtMuted = false;
+      } else {
+        audio.muted = false;
         if (btnMuteMusic) btnMuteMusic.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
       }
     });

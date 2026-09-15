@@ -380,10 +380,11 @@
     </div>
   </div>
 
-  <!-- Hidden YouTube Audio Player Container -->
-  <div id="ytAudioContainer" style="position: absolute; width: 1px; height: 1px; left: -9999px; overflow: hidden; pointer-events: none;">
-    <div id="ytPlayer"></div>
-  </div>
+  <!-- Native HTML5 Pirate Audio Element (100% Reliable Playback) -->
+  <audio id="pirateAudio" loop preload="auto">
+    <source src="assets/pirate-anthem.m4a" type="audio/mp4">
+    <source src="assets/pirate-anthem.webm" type="audio/webm">
+  </audio>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
