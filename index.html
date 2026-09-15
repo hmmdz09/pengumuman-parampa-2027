@@ -92,15 +92,22 @@
 
   <!-- Hero Section -->
   <header class="hero-section" id="hero">
-    <!-- Bendera Real-time Berkibar Langsung di Latar Belakang Tiang Kapal -->
-    <div class="bg-mast-flag-container" id="bgMastFlagContainer" title="Bendera Resmi PARAMPA 2026-2027 • Klik atau gerakkan kursor untuk hembus angin laut!">
-      <div class="flag-wind-badge">
-        <span class="pulse-dot"></span> BENDERA RESMI BERKIBAR REALTIME
+    <!-- Background Scene: 2 Kapal Bajak Laut Sesuai Feed IG dengan Bendera Real-time di Tiang -->
+    <div class="hero-bg-scene" id="heroBgScene">
+      <div class="hero-bg-scene-inner">
+        <img src="assets/pirate-background.jpg" alt="Pemandangan Kapal Bajak Laut PARAMPA" class="hero-bg-img" id="heroBgImg">
+
+        <!-- Bendera Real-time Berkibar di Tiang Kapal 1 (Kapal Hitam di Kiri) -->
+        <div class="ship-flag-mount ship-1-flag" id="shipFlagMount1" title="Bendera Armada PARAMPA di Kapal Bajak Laut • Klik untuk hembus angin!">
+          <canvas id="shipFlagCanvas1"></canvas>
+        </div>
+
+        <!-- Bendera Real-time Berkibar di Tiang Kapal 2 (Galleon Utama di Kanan) -->
+        <div class="ship-flag-mount ship-2-flag" id="shipFlagMount2" title="Bendera Resmi PARAMPA di Kapal Utama • Klik untuk hembus angin!">
+          <canvas id="shipFlagCanvas2"></canvas>
+        </div>
       </div>
-      <canvas id="shipMastFlagCanvas"></canvas>
-      <div class="flag-wind-hint">
-        <i class="fa-solid fa-wind"></i> Tiup Angin: Arahkan Kursor / Klik
-      </div>
+      <div class="hero-bg-vignette"></div>
     </div>
 
     <div class="container hero-layout">
