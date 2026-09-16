@@ -26,7 +26,7 @@ Dirancang dengan tema visual **Petualangan Bajak Laut & Maritim (Pirate Maritime
   - **Tombol WhatsApp Koordinator**: Membuka percakapan WhatsApp secara langsung dengan draf pesan perkenalan otomatis.
   - **Grup WhatsApp Kru**: Akses langsung bergabung ke grup armada panitia.
   - **Unduh Kartu Story (1080x1920)**: Mengunduh gambar piagam kelulusan digital via HTML5 Canvas untuk dibagikan ke Instagram Story atau WhatsApp Status.
-- **Direktori Kru Kapal (148 Anggota Terdaftar)**:
+- **Direktori Kru Kapal (147 Anggota Terdaftar)**:
   - Tab navigasi per divisi (*Sekretaris, Bendahara, Acara Perlombaan, Opening & Closing, Humas, Medis, Spektator Logistik, Sponsor Danus, PDDD*).
   - Kolom pencarian instan (*live search*) di dalam tabel divisi.
 - **Peta Rute Agenda (Timeline) & FAQ Helpdesk**:
