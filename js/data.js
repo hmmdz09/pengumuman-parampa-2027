@@ -266,7 +266,7 @@ const STAFF_MEMBERS = [
   { no: 10, name: "Mohamad Thareq Hanne", nim: "2506663", prodi: "Pendidikan Ilmu Komputer", division: "SPEKTATOR LOGISTIK" },
   { no: 11, name: "Mohammad Irfan", nim: "2500790", prodi: "Pendidikan Ilmu Komputer", division: "SPEKTATOR LOGISTIK" },
   { no: 12, name: "Muhamad Nazriel Purkon", nim: "2510755", prodi: "Pendidikan Ilmu Komputer", division: "SPEKTATOR LOGISTIK" },
-  { no: 13, name: "Muhammad Zaldi Nugraha", nim: "2505612", prodi: "Pendidikan Ilmu Komputer", division: "SPEKTATOR LOGISTIK" },
+  { no: 13, name: "Muhammad Zaldi Nugraha", nim: "2505661", prodi: "Pendidikan Ilmu Komputer", division: "SPEKTATOR LOGISTIK" },
   { no: 14, name: "Nopal Fauzan", nim: "2510568", prodi: "Fisika", division: "SPEKTATOR LOGISTIK" },
   { no: 15, name: "Pascalis Randi Suprayogi", nim: "2613476", prodi: "Pendidikan Matematika", division: "SPEKTATOR LOGISTIK" },
   { no: 16, name: "Queen Syah Ramadina", nim: "2607535", prodi: "Pendidikan Kimia", division: "SPEKTATOR LOGISTIK" },
